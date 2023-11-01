@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect } from "react";
+import "./App.css";
+import { IMAGES } from "./assets/images";
+import AppHeader from "./components/AppHeader/AppHeader";
 
 function App() {
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => {
+        console.log(res.data);
+        console.log("data fetched");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ position: "relative" }}>
+      <img src={IMAGES.bgImage} style={{ width: "100%" }} />
+      <AppHeader />
     </div>
   );
 }
