@@ -18,7 +18,7 @@ const LeftContainer = styled.div`
   width: 60%;
   justify-content: flex-start;
   @media (max-width: 480px) {
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
   }
@@ -32,7 +32,7 @@ const RightContainer = styled.div`
 const LogoText = styled.p`
   color: green;
   font-size: 1.2em;
-  // margin-left: 20px;
+  margin-left: 20px;
   font-weight: 600;
   @media (max-width: 480px) {
     font-size: 12px;
