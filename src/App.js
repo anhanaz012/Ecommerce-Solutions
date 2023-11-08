@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import "./App.css";
-import { IMAGES } from "./assets/images";
-import AppHeader from "./components/AppHeader/AppHeader";
+import RoutesPage from "./routes";
 
 function App() {
   useEffect(() => {
@@ -16,12 +15,7 @@ function App() {
         console.log(err);
       });
   }, []);
-  return (
-    <div style={{ position: "relative" }}>
-      <img src={IMAGES.bgImage} style={{ width: "100%" }} />
-      <AppHeader />
-    </div>
-  );
+  return <RoutesPage />;
 }
 
 export default App;

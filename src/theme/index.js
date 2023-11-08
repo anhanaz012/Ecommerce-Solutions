@@ -7,3 +7,9 @@ export const COLORS = {
 export const FONTS = {
     default:'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif'
 }
+export const breakpoints = {
+  small: '576px',
+  medium: '768px',
+  large: '992px',
+  xlarge: '1200px',
+};
