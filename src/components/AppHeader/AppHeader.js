@@ -1,4 +1,4 @@
-import { faArrowUpFromGroundWater, faBaby, faBars, faBarsProgress, faHSquare, faHamsa } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -6,9 +6,12 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 65px;
+  position: absolute;
+  top: 0;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
+  background-color: transparent;
   flex-direction: row;
   @media (max-width: 480px) {
     height: auto;
@@ -27,10 +30,9 @@ const LeftContainer = styled.div`
 const RightContainer = styled.div`
   width: 40%;
   display: flex;
- 
 `;
 const LogoText = styled.p`
-  color: green;
+  color: white;
   font-size: 1.2em;
   margin-left: 20px;
   font-weight: 600;
@@ -49,10 +51,9 @@ const LinkContainer = styled.div`
     display: flex;
     align-items: center;
   }
-  
 `;
 const NavLink = styled(Link)`
-  color: green;
+  color: white;
   text-decoration: none;
   font-weight: 400;
   margin: 20px;
@@ -61,8 +62,8 @@ const NavLink = styled(Link)`
   }
 `;
 const Button = styled.button`
-  background-color: green;
-  color: white;
+  background-color: white;
+  color: #52ba93;
   height: 35px;
   width: 15%;
   margin-right: 20px;
@@ -78,7 +79,7 @@ const ExtendedNavbar = styled.nav`
   width: 100%;
 `;
 const MenuIcon = styled.div`
-margin-right:20px;
+  margin-right: 20px;
   @media (min-width: 481px) {
     display: none;
   }
@@ -87,24 +88,22 @@ const AppHeader = () => {
   return (
     <>
       <Container>
-        <LeftContainer >
+        <LeftContainer>
           <LogoText>E-commerce Solutions</LogoText>
         </LeftContainer>
         <RightContainer>
           <LinkContainer>
             <NavLink to="/">Home</NavLink>
+            <NavLink to="/Products">Products</NavLink>
             <NavLink to="/AboutUs">AboutUs</NavLink>
             <NavLink to="/ContactUs">ContactUs</NavLink>
-            <NavLink to="/Products">Products</NavLink>
             <Button>Login</Button>
             <MenuIcon>
-            <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
-          </MenuIcon>
+              <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+            </MenuIcon>
           </LinkContainer>
-         
         </RightContainer>
       </Container>
-      <ExtendedNavbar></ExtendedNavbar>
     </>
   );
 };
