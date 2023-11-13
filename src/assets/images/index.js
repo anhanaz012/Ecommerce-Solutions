@@ -1,3 +1,5 @@
 export const IMAGES = {
-  bgImage: require("./BgImage.webp"),
+  bgImage: require("./E-commerce.avif"),
+
+
 };

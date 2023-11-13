@@ -13,12 +13,12 @@ const HomePage = () => {
   };
   return (
     <>
-      <img
+      {/* <img
         src={"https://www.hostgator.com/blog/wp-content/uploads/2020/08/Types-of-eCommerce-Websites-1024x538.jpg"}
         style={{ height: "100vh", width: "100%" }}
       />
      <Products/>
-     <AboutUs/>
+     <AboutUs/> */}
     </>
   );
 };

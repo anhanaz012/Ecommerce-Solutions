@@ -1,16 +1,17 @@
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { CiMenuBurger, CiShoppingCart, CiUser } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { LABELS } from "../../labels/index";
 
 const Container = styled.div`
   height: 65px;
   position: absolute;
+  align-items: center;
   top: 0;
   width: 100%;
-  // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
+  border-bottom: 1px solid lightgrey;
   background-color: transparent;
   flex-direction: row;
   @media (max-width: 480px) {
@@ -18,7 +19,7 @@ const Container = styled.div`
   }
 `;
 const LeftContainer = styled.div`
-  width: 60%;
+  width: 50%;
   justify-content: flex-start;
   @media (max-width: 480px) {
     justify-content: flex-start;
@@ -28,12 +29,14 @@ const LeftContainer = styled.div`
 `;
 
 const RightContainer = styled.div`
-  width: 40%;
+  width: 50%;
   display: flex;
+  height: 100%;
 `;
 const LogoText = styled.p`
-  color: white;
-  font-size: 1.2em;
+  color: black;
+  font-size: 30px;
+  font-family: "Julius Sans One";
   margin-left: 20px;
   font-weight: 600;
   @media (max-width: 480px) {
@@ -44,7 +47,7 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   @media (max-width: 480px) {
     justify-content: flex-end;
@@ -53,14 +56,23 @@ const LinkContainer = styled.div`
   }
 `;
 const NavLink = styled(Link)`
-  color: white;
+  color: black;
+  font-family: Archivo Narrow;
   text-decoration: none;
   font-weight: 400;
-  margin: 20px;
   @media (max-width: 480px) {
     display: none;
   }
 `;
+const IconsContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 10%;
+@media (max-width: 480px) {
+  display: none;
+}
+`
 const Button = styled.button`
   background-color: white;
   color: #52ba93;
@@ -82,6 +94,7 @@ const MenuIcon = styled.div`
   margin-right: 20px;
   @media (min-width: 481px) {
     display: none;
+    font-size:20px;
   }
 `;
 const AppHeader = () => {
@@ -89,17 +102,20 @@ const AppHeader = () => {
     <>
       <Container>
         <LeftContainer>
-          <LogoText>E-commerce Solutions</LogoText>
+          <LogoText>{LABELS.title}</LogoText>
         </LeftContainer>
         <RightContainer>
           <LinkContainer>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/Products">Products</NavLink>
-            <NavLink to="/AboutUs">AboutUs</NavLink>
-            <NavLink to="/ContactUs">ContactUs</NavLink>
-            <Button>Login</Button>
+            <NavLink to="/">{LABELS.home}</NavLink>
+            <NavLink to="/Products">{LABELS.AllProducts}</NavLink>
+            <NavLink to="/AboutUs">{LABELS.AboutUs}</NavLink>
+            <NavLink to="/ContactUs">{LABELS.Contact}</NavLink>
+            <IconsContainer>
+            <CiShoppingCart style={{ width: 25, height: 25 }} />
+            <CiUser style={{ width: 25, height: 25}}/>
+            </IconsContainer>
             <MenuIcon>
-              <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+             <CiMenuBurger/>
             </MenuIcon>
           </LinkContainer>
         </RightContainer>
