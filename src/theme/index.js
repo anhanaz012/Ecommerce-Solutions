@@ -5,7 +5,9 @@ export const COLORS = {
   black: "#000000",
 };
 export const FONTS = {
-    default:'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif'
+    default:'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif',
+    julius:'"Julius Sans One", sans-serif',
+    archivo:'Archivo Narrow',
 }
 export const breakpoints = {
   small: '576px',

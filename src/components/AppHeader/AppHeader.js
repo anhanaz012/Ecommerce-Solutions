@@ -6,32 +6,50 @@ import { LABELS } from "../../labels/index";
 
 const Container = styled.div`
   height: 65px;
-  position: absolute;
   align-items: center;
-  top: 0;
   width: 100%;
   display: flex;
   border-bottom: 1px solid lightgrey;
-  background-color: transparent;
   flex-direction: row;
-  @media (max-width: 480px) {
+    @media (max-width: 480px) {
     height: auto;
+    font-size: 20px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    height: auto;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    height: auto;
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    height:auto;
+  }
+  @media (min-width: 1200px) and (max-width: 1919px) {
+    
+  }
+  @media(min-width:1920px){
+    height:auto;
   }
 `;
 const LeftContainer = styled.div`
-  width: 50%;
-  justify-content: flex-start;
+  width: 60%;
   @media (max-width: 480px) {
-    justify-content: flex-start;
+    justify-content: space-between;
     display: flex;
     align-items: center;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 45%;
   }
 `;
 
 const RightContainer = styled.div`
-  width: 50%;
+  width: 40%;
   display: flex;
-  height: 100%;
+  // align-items:center;
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 55%;
+  }
 `;
 const LogoText = styled.p`
   color: black;
@@ -42,6 +60,16 @@ const LogoText = styled.p`
   @media (max-width: 480px) {
     font-size: 12px;
   }
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 16px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 18px;
+  }
+  @media(min-width:1920px){
+    font-size:40px;
+    
+  }
 `;
 const LinkContainer = styled.div`
   display: flex;
@@ -49,11 +77,6 @@ const LinkContainer = styled.div`
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  @media (max-width: 480px) {
-    justify-content: flex-end;
-    display: flex;
-    align-items: center;
-  }
 `;
 const NavLink = styled(Link)`
   color: black;
@@ -63,45 +86,60 @@ const NavLink = styled(Link)`
   @media (max-width: 480px) {
     display: none;
   }
+  @media (min-width: 481px) and (max-width: 767px) {
+    font-size: 12px;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 14px;
+  }
+  @media(min-width:1920px){
+    font-size:28px;
+  }
 `;
 const IconsContainer = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-width: 10%;
-@media (max-width: 480px) {
-  display: none;
-}
-`
-const Button = styled.button`
-  background-color: white;
-  color: #52ba93;
-  height: 35px;
+  display: flex;
+  flex-direction: row;
   width: 15%;
-  margin-right: 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: 600;
+  justify-content: space-between;
+  font-size:22px;
   @media (max-width: 480px) {
     display: none;
   }
-`;
-const ExtendedNavbar = styled.nav`
-  background-color: green;
-  width: 100%;
-`;
-const MenuIcon = styled.div`
-  margin-right: 20px;
-  @media (min-width: 481px) {
-    display: none;
-    font-size:20px;
+  @media (min-width: 768px) and (max-width: 991px) {
+    font-size: 20px;
+  }
+  @media(min-width:1920px){
+    font-size:35px;
   }
 `;
+const MenuIcon = styled.div`
+  margin-left: 10px;
+  @media (min-width: 481px) {
+    display: none;
+    font-size: 20px;
+  }
+`;
+const Icon = styled.div`
+  display: none;
+  @media (max-width: 480px) {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 20px;
+  }
+`;
+const IconStyle = {
+  width: 25,
+  height: 25,
+};
 const AppHeader = () => {
   return (
     <>
       <Container>
         <LeftContainer>
+          <MenuIcon>
+            <CiMenuBurger />
+          </MenuIcon>
           <LogoText>{LABELS.title}</LogoText>
         </LeftContainer>
         <RightContainer>
@@ -111,12 +149,12 @@ const AppHeader = () => {
             <NavLink to="/AboutUs">{LABELS.AboutUs}</NavLink>
             <NavLink to="/ContactUs">{LABELS.Contact}</NavLink>
             <IconsContainer>
-            <CiShoppingCart style={{ width: 25, height: 25 }} />
-            <CiUser style={{ width: 25, height: 25}}/>
+              <CiShoppingCart />
+              <CiUser />
             </IconsContainer>
-            <MenuIcon>
-             <CiMenuBurger/>
-            </MenuIcon>
+            <Icon>
+              <CiShoppingCart style={{ marginRight: "10px" }} />
+            </Icon>
           </LinkContainer>
         </RightContainer>
       </Container>
