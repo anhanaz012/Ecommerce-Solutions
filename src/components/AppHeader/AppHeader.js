@@ -58,7 +58,7 @@ const LogoText = styled.p`
   margin-left: 20px;
   font-weight: 600;
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: 14px;
   }
   @media (min-width: 481px) and (max-width: 767px) {
     font-size: 16px;

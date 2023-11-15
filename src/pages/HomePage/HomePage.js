@@ -16,6 +16,11 @@ const HomePage = () => {
       font-size: 20px;
     }
   `;
+  const HeadingContainer = styled.div`
+  @media (max-width: 480px) {
+    max-width: 80%;
+  }
+  `
   const BgContainer = styled.img`
     width: 90%;
     @media (max-width: 480px) {
@@ -103,7 +108,9 @@ const HomePage = () => {
     <>
       <Container>
         <ContentContainer>
+          <HeadingContainer>
           <MainHeading>{LABELS.mainHeading}</MainHeading>
+          </HeadingContainer>
           <IntroContainer>
             <IntroPara>{LABELS.introPara}</IntroPara>
           </IntroContainer>
