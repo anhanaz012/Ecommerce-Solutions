@@ -7,8 +7,7 @@ import styled from "styled-components";
 import { LABELS } from "../../labels";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-const HomePage = () => {
-  const MainHeading = styled.h1`
+const MainHeading = styled.h1`
     font-size: 40px;
     font-family: ${FONTS.julius};
     text-align: center;
@@ -104,6 +103,8 @@ const HomePage = () => {
       font-size: 12px;
     }
   `;
+const HomePage = () => {
+  
   return (
     <>
       <Container>
@@ -126,7 +127,7 @@ const HomePage = () => {
       </Container>
 
       <Products />
-      <AboutUs />
+      {/* <AboutUs /> */}
     </>
   );
 };

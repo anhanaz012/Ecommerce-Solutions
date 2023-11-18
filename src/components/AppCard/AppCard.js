@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faArrowLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { LiaSlidersHSolid } from "react-icons/lia";
 import styled from "styled-components";
 import { COLORS, FONTS } from "../../theme";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const CardContainer = styled.div`
   display: flex;
@@ -10,17 +16,22 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  @media (max-width: 480px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 `;
 const Card = styled.div`
   width: 20%;
-  height: auto;
+  height: 380px;
   background-color: #fbfbfa;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin: 20px;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
   @media (max-width: 480px) {
-    width: 45%;
-    margin: 0;
+    width: 85%;
   }
 `;
 
@@ -28,6 +39,8 @@ const Image = styled.img`
   width: 90%;
   height: 135px;
   border-radius: 10px;
+  @media (max-width: 480px) {
+  }
 `;
 const ImgCont = styled.div`
   height: 155px;
@@ -42,19 +55,21 @@ const ContentCont = styled.div`
   align-items: center;
 `;
 const ItemName = styled.h3`
-  color: green;
-  font-family: ${FONTS.default};
+color: black;
+font-family: ${FONTS.julius};
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+margin-bottom: 5px;
+position: relative;
+&:hover {
+  overflow: auto;
+  white-space: normal;
 `;
 const ItemDescription = styled.p`
   color: grey;
   font-family: ${FONTS.default};
   font-size: 12px;
-  height: ${(props) => (props.expanded ? "auto" : "36px")};
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: ${(props) => (props.expanded ? "initial" : "3")};
-  -webkit-box-orient: vertical;
 `;
 const AddCartButton = styled.button`
   height: 35px;
@@ -63,19 +78,22 @@ const AddCartButton = styled.button`
   display: flex;
   margin: 10px;
   justify-content: center;
-  font-family: ${FONTS.default};
+  font-family: ${FONTS.archivo};
   border: none;
   color: white;
   align-items: center;
-  background-color: green;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
 `;
 const ItemPrice = styled.p`
-  color: green;
+  color: black;
   font-family: ${FONTS.default};
 `;
 const DetailsCont = styled.div`
-  height: auto;
+  height: 300px;
   padding: 10px;
+  overflow: hidden;
 `;
 const ButtonContainer = styled.div`
   height: 50px;
@@ -85,49 +103,94 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
 `;
 
-const ReadMoreButton = styled.button`
-  font-family: ${FONTS.default};
-  background: none;
-  border: none;
-  color: green;
-  cursor: pointer;
-`;
-const Text = styled.h1`
-  color: green;
-  font-family: ${FONTS.default};
-  text-align: center;
-`;
-const ArrowBtn = styled.button`
+const ArrowLeftBtn = styled.button`
   height: 35px;
   width: 35px;
-  background-color: green;
+  background-color: black;
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  @media (max-width: 480px) {
+    display: none;
+  }
+`;
+const RightArrowBtn = styled.button`
+  height: 35px;
+  width: 35px;
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  @media (max-width: 480px) {
+    display: none;
+  }
 `;
 
-const AppCard = ( {data, prevPageHandler,nextFunctionHandler}) => {
-  const [expandedCards, setExpandedCards] = useState([]);
-  const handleExpandToggle = (cardId) => {
-    if (expandedCards.includes(cardId)) {
-      setExpandedCards(expandedCards.filter((id) => id !== cardId));
-    } else {
-      setExpandedCards([...expandedCards, cardId]);
-    }
-  };
-  
+const SmDevicesPaginationCont = styled.button`
+  height: 40px;
+  display: flex;
 
-    return (
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  background-color: white;
+  border: none;
+  @media (min-width: 480px) {
+    display: none;
+  }
+`;
+const SmDevicesArrowBtn = styled.div`
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 15px;
+`;
+const FilterButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  font-size: 20px;
+  padding: 7px;
+  border-radius: 5px;
+  font-family: ${FONTS.archivo};
+  color: black;
+  border: 1px solid lightgrey;
+  @media (min-width: 480px) {
+    display: none;
+  }
+`;
+const AppCard = ({ data, prevPageHandler, nextFunctionHandler }) => {
+  return (
     <>
-      <Text>Featured Products</Text>
       <CardContainer>
-        <ArrowBtn onClick={prevPageHandler}>
+        <SmDevicesPaginationCont>
+          <FilterButton>
+            <LiaSlidersHSolid />
+          </FilterButton>
+          <SmDevicesArrowBtn>
+            <FontAwesomeIcon
+              onClick={prevPageHandler}
+              icon={faAngleLeft}
+              color={COLORS.black}
+              size="lg"
+            />
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              color={COLORS.black}
+              size="lg"
+              onClick={nextFunctionHandler}
+            />
+          </SmDevicesArrowBtn>
+        </SmDevicesPaginationCont>
+        <ArrowLeftBtn onClick={prevPageHandler}>
           <FontAwesomeIcon icon={faArrowLeft} color={COLORS.white} size="lg" />
-        </ArrowBtn>
+        </ArrowLeftBtn>
         {data ? (
           data.map((item) => {
-            const isExpanded = expandedCards.includes(item.id);
-
             return (
               <Card key={item.id}>
                 <ImgCont>
@@ -137,16 +200,7 @@ const AppCard = ( {data, prevPageHandler,nextFunctionHandler}) => {
                   <DetailsCont>
                     <ItemName>{item.title}</ItemName>
                     <ItemPrice>Rs. {item.price}</ItemPrice>
-                    <ItemDescription expanded={isExpanded}>
-                      {item.description}
-                    </ItemDescription>
-                    {!isExpanded && (
-                      <ReadMoreButton
-                        onClick={() => handleExpandToggle(item.id)}
-                      >
-                        Read More
-                      </ReadMoreButton>
-                    )}
+                    <ItemDescription>{item.description}</ItemDescription>
                   </DetailsCont>
                   <ButtonContainer>
                     <AddCartButton>Add to Cart</AddCartButton>
@@ -158,9 +212,9 @@ const AppCard = ( {data, prevPageHandler,nextFunctionHandler}) => {
         ) : (
           <></>
         )}
-        <ArrowBtn onClick={nextFunctionHandler}>
+        <RightArrowBtn onClick={nextFunctionHandler}>
           <FontAwesomeIcon icon={faArrowRight} color={COLORS.white} size="lg" />
-        </ArrowBtn>
+        </RightArrowBtn>
       </CardContainer>
     </>
   );

@@ -68,7 +68,6 @@ const LogoText = styled.p`
   }
   @media(min-width:1920px){
     font-size:40px;
-    
   }
 `;
 const LinkContainer = styled.div`
