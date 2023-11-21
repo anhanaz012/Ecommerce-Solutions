@@ -63,6 +63,7 @@ const AboutUsPara = styled.p`
   font-weight: lighter;
   @media (max-width: 480px) {
     font-size: 15px;
+    font-weight:normal;
   }
 `;
 const Text = styled.p`
@@ -70,8 +71,10 @@ const Text = styled.p`
   color: grey;
   margin-left: 5%;
   font-weight: lighter;
+  
   @media (max-width: 480px) {
     font-size: 15px;
+    font-weight:normal;
   }
 `;
 const TextContainer = styled.div`
