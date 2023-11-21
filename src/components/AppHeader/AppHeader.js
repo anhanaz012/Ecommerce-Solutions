@@ -11,7 +11,7 @@ const Container = styled.div`
   display: flex;
   border-bottom: 1px solid lightgrey;
   flex-direction: row;
-    @media (max-width: 480px) {
+  @media (max-width: 480px) {
     height: auto;
     font-size: 20px;
   }
@@ -22,13 +22,12 @@ const Container = styled.div`
     height: auto;
   }
   @media (min-width: 992px) and (max-width: 1199px) {
-    height:auto;
+    height: auto;
   }
   @media (min-width: 1200px) and (max-width: 1919px) {
-    
   }
-  @media(min-width:1920px){
-    height:auto;
+  @media (min-width: 1920px) {
+    height: auto;
   }
 `;
 const LeftContainer = styled.div`
@@ -66,8 +65,8 @@ const LogoText = styled.p`
   @media (min-width: 768px) and (max-width: 991px) {
     font-size: 18px;
   }
-  @media(min-width:1920px){
-    font-size:40px;
+  @media (min-width: 1920px) {
+    font-size: 40px;
   }
 `;
 const LinkContainer = styled.div`
@@ -91,8 +90,8 @@ const NavLink = styled(Link)`
   @media (min-width: 768px) and (max-width: 991px) {
     font-size: 14px;
   }
-  @media(min-width:1920px){
-    font-size:28px;
+  @media (min-width: 1920px) {
+    font-size: 28px;
   }
 `;
 const IconsContainer = styled.div`
@@ -100,15 +99,15 @@ const IconsContainer = styled.div`
   flex-direction: row;
   width: 15%;
   justify-content: space-between;
-  font-size:22px;
+  font-size: 22px;
   @media (max-width: 480px) {
     display: none;
   }
   @media (min-width: 768px) and (max-width: 991px) {
     font-size: 20px;
   }
-  @media(min-width:1920px){
-    font-size:35px;
+  @media (min-width: 1920px) {
+    font-size: 35px;
   }
 `;
 const MenuIcon = styled.div`
@@ -122,15 +121,37 @@ const Icon = styled.div`
   display: none;
   @media (max-width: 480px) {
     display: flex;
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     width: 100%;
     font-size: 20px;
   }
+`;
+const CartCount = styled.div`
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 13px;
 `;
 const IconStyle = {
   width: 25,
   height: 25,
 };
+const CartContainer = styled.div`
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
 const AppHeader = () => {
   return (
     <>
@@ -152,7 +173,12 @@ const AppHeader = () => {
               <CiUser />
             </IconsContainer>
             <Icon>
-              <CiShoppingCart style={{ marginRight: "10px" }} />
+              <CartContainer>
+                <CiShoppingCart style={{ marginRight: "10px" }} />
+                <CartCount>
+                  <p style={{ color: "white" }}>1</p>
+                </CartCount>
+              </CartContainer>
             </Icon>
           </LinkContainer>
         </RightContainer>

@@ -17,6 +17,9 @@ const Text = styled.h1`
   color: black;
   font-family: ${FONTS.julius};
   text-align: center;
+  @media (max-width: 480px) {
+    // font-size: 18px;
+  }
 `;
 const FilterItem = styled.button`
   height: 45px;

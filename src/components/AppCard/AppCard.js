@@ -30,8 +30,17 @@ const Card = styled.div`
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-  @media (max-width: 480px) {
+  @media (max-width: 370px) {
     width: 85%;
+  }
+  @media (min-width: 371px) and (max-width: 480px) {
+    width: 75%;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    width: 35%;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 35%;
   }
 `;
 
@@ -113,6 +122,12 @@ const ArrowLeftBtn = styled.button`
   @media (max-width: 480px) {
     display: none;
   }
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: none;
+  }
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
 `;
 const RightArrowBtn = styled.button`
   height: 35px;
@@ -124,24 +139,29 @@ const RightArrowBtn = styled.button`
   @media (max-width: 480px) {
     display: none;
   }
+  @media (min-width: 768px) and (max-width: 991px) {
+    display: none;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: none;
+  }
 `;
 
 const SmDevicesPaginationCont = styled.button`
   height: 40px;
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   width: 85%;
-  background-color: white;
+  background-color: yellow;
   border: none;
-  @media (min-width: 480px) {
+  @media (min-width: 786px) {
     display: none;
   }
 `;
 const SmDevicesArrowBtn = styled.div`
-  width: 15%;
+  width: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -159,9 +179,10 @@ const FilterButton = styled.button`
   font-family: ${FONTS.archivo};
   color: black;
   border: 1px solid lightgrey;
-  @media (min-width: 480px) {
-    display: none;
-  }
+  // @media (min-width: 480px) {
+  //   display: none;
+  // }
+  
 `;
 const AppCard = ({ data, prevPageHandler, nextFunctionHandler }) => {
   return (
