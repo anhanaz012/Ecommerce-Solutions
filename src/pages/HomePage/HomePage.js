@@ -99,6 +99,11 @@ const Button = styled.button`
     background-color: transparent;
     color: black;
   }
+  @media (min-width: 768px) {
+    &:hover {
+      background-color:red;
+    }
+  }
   @media (max-width: 480px) {
     width: 40%;
     height: 40px;
@@ -126,14 +131,13 @@ const HomePage = () => {
           <BgContainer src={IMAGES.newImage}></BgContainer>
         </ImageContainer>
       </Container>
-      
+
       <Products />
       <div style={{ height: "100px", width: "100%" }}></div>
       <AboutUs />
       <div style={{ height: "100px", width: "100%" }}></div>
-      <ContactUs/>
-      <Footer/>
-      
+      <ContactUs />
+      <Footer />
     </>
   );
 };
