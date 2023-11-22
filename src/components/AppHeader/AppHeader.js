@@ -3,6 +3,7 @@ import { CiMenuBurger, CiShoppingCart, CiUser } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { LABELS } from "../../labels/index";
+import { FONTS } from "../../theme";
 
 const Container = styled.div`
   height: 65px;
@@ -121,8 +122,6 @@ const Icon = styled.div`
   display: none;
   @media (max-width: 480px) {
     display: flex;
-    background-color: yellow;
-    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -146,9 +145,10 @@ const IconStyle = {
   height: 25,
 };
 const CartContainer = styled.div`
-  background-color: red;
   display: flex;
+  width: 50px;
   flex-direction: row;
+  height: 100%;
   justify-content: center;
   align-items: center;
 `;
@@ -170,14 +170,55 @@ const AppHeader = () => {
             <NavLink to="/ContactUs">{LABELS.Contact}</NavLink>
             <IconsContainer>
               <CiShoppingCart />
+              <div
+                style={{
+                  backgroundColor: "black",
+                  width: "15px",
+                  height: "15px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  color: "white",
+                  fontSize: "12px",
+                  borderRadius: "13px",
+                  marginLeft: "-48%",
+                  fontFamily:FONTS.archivo,
+                  fontWeight:'bold',
+                  marginTop: "-3%",
+                  fontSize: "10px",
+                }}
+              >
+                <p>0</p>
+              </div>
+
               <CiUser />
             </IconsContainer>
             <Icon>
               <CartContainer>
-                <CiShoppingCart style={{ marginRight: "10px" }} />
-                <CartCount>
+                <CiShoppingCart />
+                <div
+                  style={{
+                    backgroundColor: "black",
+                    width: "12px",
+                    height: "12px",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    color: "white",
+                    fontSize: "12px",
+                    borderRadius: "13px",
+                    marginLeft: "-18%",
+                    marginTop: "-25%",
+                    fontSize: "8px",
+                    fontWeight:'bold',
+                  }}
+                >
+                  <p>1</p>
+                </div>
+                {/* <CiShoppingCart style={{ marginRight: "10px" }} /> */}
+                {/* <CartCount>
                   <p style={{ color: "white" }}>1</p>
-                </CartCount>
+                </CartCount> */}
               </CartContainer>
             </Icon>
           </LinkContainer>
