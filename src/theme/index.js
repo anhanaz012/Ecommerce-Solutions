@@ -3,6 +3,7 @@ export const COLORS = {
   secondary: "#B0BCC0",
   white: "#FFFFFF",
   black: "#000000",
+  gray:'#fbfbfa'
 };
 export const FONTS = {
     default:'"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif',

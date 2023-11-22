@@ -6,6 +6,8 @@ import { IMAGES } from "../../assets/images/index";
 import styled from "styled-components";
 import { LABELS } from "../../labels";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import Footer from "../../components/Footer/Footer";
+import ContactUs from "../ContactUs/ContactUs";
 
 const MainHeading = styled.h1`
   font-size: 40px;
@@ -129,7 +131,9 @@ const HomePage = () => {
       <div style={{ height: "100px", width: "100%" }}></div>
       <AboutUs />
       <div style={{ height: "100px", width: "100%" }}></div>
-      <Products />
+      <ContactUs/>
+      <Footer/>
+      
     </>
   );
 };

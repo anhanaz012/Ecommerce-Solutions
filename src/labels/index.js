@@ -30,4 +30,16 @@ export const LABELS = {
   testimonialUser3: "LucasThompson",
   testimonialUser4: "SophiaReynolds",
   testimonialUser5: "JacksonMiller",
+  privacyPolicy: "Privacy Policy",
+  termsOfService: "Terms of Service",
+  cookiesSetting: "Cookies Setting",
+  contactUsSubHeading:
+    'Tailored Support Solutions—Connecting You to Seamless Assistance and Satisfaction',
+  getInTouch: "Get in Touch",
+  contactUsPara:
+    " Have questions about our products, need assistance, or want to provide feedback? We are here to help! Send your message, and we will get back to you as soon as possible.",
+    enterName:'Enter name',
+    enterEmail:'Enter email address',
+    enterMessage:'Enter your Message here...',
+    submit:'Submit',
 };

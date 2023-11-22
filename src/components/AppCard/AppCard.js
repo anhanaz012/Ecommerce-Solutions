@@ -24,7 +24,7 @@ const CardContainer = styled.div`
 const Card = styled.div`
   width: 20%;
   height: 380px;
-  background-color: #fbfbfa;
+  background-color:${COLORS.gray};
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin: 20px;
   border-radius: 10px;
@@ -154,7 +154,7 @@ const SmDevicesPaginationCont = styled.button`
   justify-content: space-between;
   align-items: center;
   width: 85%;
-  background-color: yellow;
+  background-color: transparent;
   border: none;
   @media (min-width: 786px) {
     display: none;
